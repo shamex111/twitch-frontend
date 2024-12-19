@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import { NO_INDEX_PAGE } from '@/shared/constants/seo.constants';
 
-import AuthLogin from '@/features/auth-modal/ui/authLogin';
+import AuthLogin from '@/features/auth/ui/authLogin';
 
 export const metadata: Metadata = {
   title: 'Вход',

@@ -1,0 +1,14 @@
+.verifiedNotificationWrapper {
+  @apply flex px-5 rounded-[20px] mx-[60px] bg-Accent h-[45px] absolute cursor-pointer;
+  bottom: 20px;
+  width: calc(100% - 120px - 278px);
+  > .info {
+    @apply text-White m-auto font-medium text-[18px] w-fit;
+  }
+
+  > .icon{
+    @apply text-White size-6 my-auto ;
+  }
+
+  
+}

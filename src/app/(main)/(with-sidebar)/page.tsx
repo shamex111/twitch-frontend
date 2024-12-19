@@ -1,3 +1,4 @@
+import MainContent from '@/widgets/main-content/ui/mainContent';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -6,6 +7,6 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return <div >
-        
+        <MainContent/>
   </div>;
 }

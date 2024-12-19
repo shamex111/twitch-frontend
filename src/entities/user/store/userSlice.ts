@@ -1,7 +1,7 @@
 import { IProfile } from '../user.types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { IUserState } from './types';
+import { IUpdateUserState, IUserState } from './types';
 
 const initialState: IUserState = {
   userData: null,
@@ -36,6 +36,13 @@ const userSlice = createSlice({
       state.userData = null;
       state.isLoading = false;
       state.isAuthorized = false;
+    },
+
+    updateUser: (state, payload: PayloadAction<IUpdateUserState>) => {
+      if (state.userData) {
+        const updatedUserData = { ...state.userData, ...payload.payload };
+        state.userData = updatedUserData;
+      }
     }
   }
 });

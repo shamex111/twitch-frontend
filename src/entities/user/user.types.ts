@@ -16,6 +16,8 @@ export interface IProfile {
   updatedAt: string;
 }
 
+
+
 export interface IUser
   extends Omit<
     IProfile,

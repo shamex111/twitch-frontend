@@ -7,14 +7,15 @@ import { sessionService } from '@/entities/session';
 import { APP_ROUTES } from '@/shared/routes';
 
 export const logoutMutation = () => {
-  const {push,refresh} = useRouter();
+  const {push} = useRouter();
   const { mutate } = useMutation({
     mutationKey: ['logout'],
     mutationFn: () => sessionService.logout(),
     onSuccess: () => {
       toast.success('Вы вышли из аккаунта.');
       push(APP_ROUTES.home());
-      refresh()
+      // refresh() // не работает почему-то
+      window.location.reload();
     },
     onError(error: AxiosError<{ message?: string }>) {
       if (error?.response?.data?.message) {

@@ -1,0 +1,42 @@
+.authWrapper {
+  @apply bg-Modal w-[645px] h-[85%] my-[7.5vh] py-[30px] mx-auto rounded-[10px] flex flex-col p-4;
+  > .header {
+    @apply text-White text-center font-bold text-[36px] mx-auto mt-[20px];
+  }
+  .info {
+    @apply text-Gray text-[14.5px] mx-[20px] mt-[25px] w-fit;
+  }
+
+  > form {
+    @apply flex flex-col m-[30px] space-y-[30px];
+  }
+ 
+  > .otherVariant {
+    @apply text-White text-[16px] mx-auto;
+  }
+
+  > .button {
+    @apply w-full rounded-[5px] py-[15px] font-medium mx-auto;
+  }
+
+  > .code {
+    @apply flex space-x-2 mx-auto w-fit mt-[20px];
+    > .codeItem {
+      @apply rounded-[5px] border-[2px] border-Border h-[35px] w-[35px] bg-transparent outline-none flex justify-center text-[20px] px-[10px] text-Gray font-medium;
+    }
+  }
+
+  > .infoTwoFactor {
+    @apply text-Gray mt-[15px] mx-auto;
+  }
+
+  > .send {
+    @apply text-Accent cursor-pointer ml-auto mt-[20px];
+  }
+  > .submit {
+    @apply cursor-pointer  mt-[20px];
+  }
+}
+.recaptcha {
+  @apply mx-auto w-fit;
+}

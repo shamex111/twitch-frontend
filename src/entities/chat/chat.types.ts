@@ -5,31 +5,31 @@ export interface ICreateMessage {
 }
 
 export interface IDeleteMessage {
-  messageId:string;
+  messageId: string;
 }
 
 export interface IPinnedMessage {
-  messageId:string;
+  messageId: string;
 }
 
 export interface IUnpinnedMessage {
-  messageId:string;
+  messageId: string;
 }
 
 export interface IMessage {
   id: string;
   createdAt: string;
   updatedAt: string;
-  chatId:string;
-  senderId:string;
-  replyMessageId?:string;
-  content:string
+  chatId: string;
+  senderId: string;
+  replyMessageId?: string;
+  content: string;
 }
 
-export interface IChat{
+export interface IChat {
   id: string;
   createdAt: string;
   updatedAt: string;
-  pinnedMessageId?:string;
-  userId:string
+  pinnedMessageId?: string;
+  userId: string;
 }

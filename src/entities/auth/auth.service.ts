@@ -4,6 +4,7 @@ import { axiosAPI } from '@/shared/config';
 import { SERVER_ROUTES } from '@/shared/routes';
 
 import { ILoginForm, IRegisterForm, TProvider } from './auth.types';
+import { IResponse } from '@/shared/types';
 
 export const COOKIE_SESSION_NAME = 'session';
 
@@ -21,7 +22,7 @@ class AuthService {
   }
 
   public async login(data: ILoginForm, captchaToken: string) {
-    return axiosAPI.post<IProfile>(SERVER_ROUTES.login(), data, {
+    return axiosAPI.post<IResponse | { user: IProfile }>(SERVER_ROUTES.login(), data, {
       headers: {
         recaptcha: captchaToken
       }
