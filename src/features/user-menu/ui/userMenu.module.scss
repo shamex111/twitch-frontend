@@ -1,0 +1,35 @@
+.userMenuWrapper {
+  @apply bg-Panel w-[310px] h-[332px] rounded-[8px] absolute right-10 top-[80px] flex flex-col;
+  
+  > .userInfo {
+    @apply flex mt-[20px] mx-[20px] space-x-4 mb-[15px];
+    
+    > .avatar {
+        @apply w-[40px] h-[40px] rounded-full;
+    };
+    
+    > .name {
+        @apply my-auto text-White font-medium text-[1rem];
+    }
+  }
+
+  > .line {
+    @apply w-[285px] mx-[13px] h-[2px] bg-Border;
+  }
+
+  > .listLinks {
+    @apply ml-[12px] flex flex-col space-y-[20px] mt-[20px];
+
+    > .itemListLinks {
+      @apply text-White text-[15px] flex space-x-[12px];
+
+      > .itemListLinkName {
+        @apply font-normal cursor-pointer;
+      }
+
+      &:last-child {
+        margin-bottom: 20px; 
+      }
+    }
+  }
+}

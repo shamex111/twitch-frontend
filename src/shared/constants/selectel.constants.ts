@@ -1,0 +1,1 @@
+export const SELECTEL_URL:string = process.env.SELECTEL_URL as string

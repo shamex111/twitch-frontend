@@ -1,0 +1,23 @@
+.authWrapper {
+  @apply bg-Modal w-[645px] h-[85%] my-[7.5vh] py-[30px] mx-auto rounded-[10px] flex flex-col ;
+  > .header {
+    @apply text-White font-bold text-[36px] mx-auto mt-[20px];
+  }
+  .info {
+    @apply text-Gray text-[14.5px] mx-[20px] mt-[25px] w-fit;
+  }
+
+  > form {
+    @apply flex flex-col m-[30px] space-y-[30px];
+    > .recaptcha{
+      @apply mx-auto w-fit;
+    }
+  }
+  > .otherVariant {
+    @apply text-White text-[16px] mx-auto;
+  }
+
+  > .button {
+    @apply w-full rounded-[5px] py-[15px] font-medium mx-auto ;
+  }
+}

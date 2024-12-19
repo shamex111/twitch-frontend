@@ -1,0 +1,26 @@
+.field {
+  @apply text-left;
+
+  > label {
+    > span {
+      @apply text-[15px]  text-Gray ;
+    }
+    > div {
+      @apply flex h-10 border-Border border-[2px] rounded-[8px] mt-[4px];
+      > button {
+        @apply h-fit w-fit m-auto mr-2;
+      }
+      input {
+        @apply flex h-8 my-auto bg-transparent rounded-[5px]  text-Gray px-1 py-2 text-sm focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50;
+        width: calc(100% - 20px);
+      }
+    }
+    .errorInput {
+      @apply border-Red border-[4px] ;
+    }
+  }
+}
+
+.error {
+  @apply text-Red  text-sm mt-[4px];
+}

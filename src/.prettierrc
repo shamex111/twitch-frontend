@@ -1,0 +1,21 @@
+{
+    "singleQuote": true,
+    "trailingComma": "none",
+    "arrowParens": "avoid",
+    "importOrder": [
+      "<THIRD_PARTY_MODULES>",
+      "^@/shared/(.*)$",
+      "^@/entities/(.*)$",
+      "^@/features/(.*)$",
+      "^@/widgets/(.*)$",
+      "^@/pages/(.*)$",
+      "^@/processes/(.*)$",
+      "^@/app/(.*)$",
+      "^./(.*)$",
+      "(.scss)$"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "plugins": ["@trivago/prettier-plugin-sort-imports"]
+  }
+  

@@ -1,0 +1,15 @@
+.searchWrapper {
+  @apply box-border my-auto w-[680px] h-[50px] rounded-[30px] border-Border border-[2px] ml-[200px] bg-transparent flex;
+
+  &:focus-within {
+    @apply border-Accent border-[4px];
+  }
+
+  > .searchIcon {
+    @apply text-Gray size-[24px] my-auto ml-[20px] h-fit;
+  }
+
+  > .searchInput {
+    @apply bg-transparent outline-none text-Gray ml-[13px] text-[18px] font-normal w-full;
+  }
+}

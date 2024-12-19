@@ -1,0 +1,1 @@
+export const RECAPTCHA_SITE_SECRET:string = process.env.RECAPTCHA_SITE_SECRET as string
