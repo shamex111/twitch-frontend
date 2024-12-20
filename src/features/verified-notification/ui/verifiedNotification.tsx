@@ -6,7 +6,7 @@ import { FaArrowRight } from 'react-icons/fa6';
 
 import Modal from '@/shared/ui/modal/modal';
 
-import VerifiedModal from './verifiedModal';
+import VerifiedModal from './verified-modal/verifiedModal';
 import styles from './verifiedNotification.module.scss';
 
 interface IVerifiedNotification {

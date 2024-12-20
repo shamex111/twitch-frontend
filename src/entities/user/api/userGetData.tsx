@@ -4,8 +4,8 @@ import { FC, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 
-import { userActions } from './store';
-import { userCheckStatusQuery } from './userChechkStatusQuery';
+import { userActions } from '../store';
+import { userCheckStatusQuery } from './userCheckStatusQuery';
 import { userQuery } from './userQuery';
 
 const UserGetData: FC = () => {

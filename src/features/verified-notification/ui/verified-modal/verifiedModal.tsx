@@ -1,6 +1,6 @@
 'use client';
 
-import { confirmEmailMutation } from '../api';
+import { confirmEmailMutation } from '../../api';
 import { FC, useState } from 'react';
 import toast from 'react-hot-toast';
 import { GoX } from 'react-icons/go';

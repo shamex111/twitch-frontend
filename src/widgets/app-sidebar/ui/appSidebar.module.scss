@@ -1,4 +1,40 @@
-.sidebar{
-    @apply w-[328px] bg-Modal border-Border border-r;
-    height:calc(100vh - 94px);
+.sidebar {
+  @apply w-[328px] bg-Modal border-Border border-r pt-[25px] flex flex-col;
+  height: calc(100vh - 94px);
+  > .channels {
+    @apply flex flex-col space-y-[20px] overflow-auto;
+    height: calc(100% - 80px);
+    .recommendChannels {
+      @apply ml-[20px] flex flex-col space-y-[25px];
+      .title {
+        @apply text-White text-[20px] font-semibold;
+      }
+    }
+    .followChannels {
+      @apply ml-[20px] flex flex-col space-y-[25px];
+      .title {
+        @apply text-White text-[20px] font-semibold;
+      }
+    }
+  }
+  > .streamButton {
+    @apply w-[180px] h-[40px] mx-auto;
+
+    > .streamIcon{
+      @apply size-6;
+    }
+    > .streamText{
+      @apply text-White font-medium text-[13px];
+    }
+
+    background: linear-gradient(90deg, #9147ff 0%, #e82c2c 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
 }

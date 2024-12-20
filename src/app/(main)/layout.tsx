@@ -1,4 +1,4 @@
-import UserGetData from '@/entities/user/userGetData';
+import UserGetData from '@/entities/user/api/userGetData';
 
 import AppHeader from '@/widgets/app-header/ui/appHeader';
 

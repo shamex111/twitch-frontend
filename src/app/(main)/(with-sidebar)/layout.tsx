@@ -8,7 +8,7 @@ export default function layout({
   return (
     <div className="flex">
       <AppSidebar />
-      <div className="w-full">
+      <div className="w-full border-t-[1px] border-Border">
         {children}
       </div>
     </div>

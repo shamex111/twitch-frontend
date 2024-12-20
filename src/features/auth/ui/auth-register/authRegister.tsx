@@ -1,7 +1,6 @@
 'use client';
 
-import { registerMutation } from '../api';
-import { useRecaptcha } from '../hooks';
+;
 import Link from 'next/link';
 import { FC } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
@@ -14,9 +13,12 @@ import { Button } from '@/shared/ui/button';
 
 import { IRegisterForm } from '@/entities/auth';
 
-import styles from './auth.module.scss';
+import styles from '../auth.module.scss';
 import AuthRegisterFields from './authRegisterFields';
-import SocialVariants from './socialVariants';
+import SocialVariants from '../social-variants/socialVariants';
+import { registerMutation } from '../../api';
+import { useRecaptcha } from '../../hooks';
+
 
 const AuthRegister: FC = () => {
   const {

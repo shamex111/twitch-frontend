@@ -35,6 +35,10 @@ class UserService {
   public async find(searchTerm: string) {
     return axiosAPI.get<IUser[]>(SERVER_ROUTES.usersFind(searchTerm));
   }
+
+  public async findByName(name: string) {
+    return axiosAPI.get<IUser>(SERVER_ROUTES.usersFindByName(name));
+  }
 }
 
 export const userService = new UserService();

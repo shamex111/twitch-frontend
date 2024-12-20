@@ -6,9 +6,13 @@ export interface IRegisterForm {
 }
 
 export interface ILoginForm {
-  email:string,
-  password:string,
-  code?:string
+  email: string;
+  password: string;
+  code?: string;
 }
 
-export type TProvider  = "google" | "yandex"
+export interface IProviderUrl {
+  url: string;
+}
+
+export type TProvider = 'google' | 'yandex';

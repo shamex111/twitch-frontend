@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 
-import { userService } from './user.service';
+import { userService } from '../user.service';
 
 export const userQuery = (enabledData: boolean | undefined) => {
   const { data, isLoading, error } = useQuery({

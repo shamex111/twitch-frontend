@@ -1,2 +1,2 @@
-export * from './verifiedNotification'
-export * from './verifiedModal'
+export * from './verifiedNotification';
+export * from './verified-modal/verifiedModal';

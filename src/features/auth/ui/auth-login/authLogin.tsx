@@ -1,8 +1,5 @@
 'use client';
 
-import { loginMutation } from '../api';
-import { TwoFactorSendEmailMutation } from '../api/twoFactorSendEmailMutation';
-import { useRecaptcha } from '../hooks';
 import { AxiosResponse } from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -20,11 +17,15 @@ import { Button } from '@/shared/ui/button';
 import { ILoginForm } from '@/entities/auth';
 import { IProfile } from '@/entities/user';
 
-import styles from './auth.module.scss';
+import styles from '../auth.module.scss';
 import AuthLoginFields from './authLoginFields';
-import SocialVariants from './socialVariants';
+import SocialVariants from '../social-variants/socialVariants';
+import { useRecaptcha } from '../../hooks';
+import { loginMutation } from '../../api';
+import { TwoFactorSendEmailMutation } from '../../api/twoFactorSendEmailMutation';
 
-const AuthRegister: FC = () => {
+
+const AuthLogin: FC = () => {
   const {
     register,
     handleSubmit,
@@ -164,4 +165,4 @@ const AuthRegister: FC = () => {
   );
 };
 
-export default AuthRegister;
+export default AuthLogin;

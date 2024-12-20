@@ -10,7 +10,7 @@ export const SERVER_ROUTES = {
   register: () => SERVER_ROUTES.auth('register'),
   login: () => SERVER_ROUTES.auth('login'),
   provider: (provider: TProvider) =>
-    SERVER_ROUTES.auth(`/oauth/connect/${provider}`),
+    SERVER_ROUTES.auth(`oauth/connect/${provider}`),
 
   emailChangeRoot: (url = '') => SERVER_ROUTES.root(`/email-change/${url}`),
   sendEmailChange: () => SERVER_ROUTES.emailChangeRoot('send-change-email'),
@@ -90,6 +90,8 @@ export const SERVER_ROUTES = {
   usersProfile: () => SERVER_ROUTES.usersRoot('profile'),
   usersFind: (searchTerm: string) =>
     SERVER_ROUTES.usersRoot(`find/${searchTerm}`),
+  usersFindByName: (name: string) =>
+    SERVER_ROUTES.usersRoot(`find-by-name/${name}`),
   usersUpdate: () => SERVER_ROUTES.usersRoot('update'),
   usersUpdateAvatar: () => SERVER_ROUTES.usersRoot('update-avatar'),
   usersUpdateBanner: () => SERVER_ROUTES.usersRoot('update-banner')

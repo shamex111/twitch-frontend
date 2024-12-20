@@ -1,0 +1,18 @@
+.socialVariantsWrapper {
+    @apply w-full mt-[30px] ;
+
+    > .lineWrapper{
+        @apply flex items-center space-x-2;
+        > .line {
+            @apply w-full h-[1px] bg-Gray;
+        }
+        > .or{
+            @apply text-Gray ;
+        }
+    }
+
+    > .variantsWrapper {
+        @apply flex space-x-7 mx-auto w-fit mt-3;
+    }
+
+}

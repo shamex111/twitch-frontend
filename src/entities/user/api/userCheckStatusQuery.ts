@@ -1,4 +1,4 @@
-import { authService } from '../auth';
+import { authService } from '../../auth';
 import { useQuery } from '@tanstack/react-query';
 
 export const userCheckStatusQuery = () => {
