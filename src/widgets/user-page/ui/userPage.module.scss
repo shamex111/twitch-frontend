@@ -1,3 +1,17 @@
-.userPageWrapper{
-    @apply w-full h-full ;
+.userPageWrapper {
+  @apply w-full h-full flex flex-col space-y-[160px];
+  > .header {
+    @apply flex space-x-[16px] mx-auto w-fit top-[80px] relative;
+  }
+
+  > .content {
+    @apply bg-Main h-full;
+    width: calc(100% - 70px);
+    > .topContent{
+      @apply flex px-[50px] justify-between mt-[40px] ;
+      > .actionButtons {
+        @apply my-auto ;
+      }
+    }
+  }
 }

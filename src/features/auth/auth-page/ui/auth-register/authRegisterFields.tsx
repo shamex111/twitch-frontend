@@ -1,11 +1,10 @@
 import { FC } from 'react';
 import { FieldError, UseFormGetValues, UseFormRegister } from 'react-hook-form';
 
-
-import { validEmail } from '@/shared/utils/valid-email';
+import Field from '@/shared/ui/field/field';
+import { validEmail } from '@/shared/utils/valid-email.util';
 
 import { IRegisterForm } from '@/entities/auth';
-import Field from '@/shared/ui/field/field';
 
 interface IAuthRegisterFields {
   register: UseFormRegister<IRegisterForm>;
@@ -24,7 +23,7 @@ const AuthRegisterFields: FC<IAuthRegisterFields> = ({
   getValues
 }) => {
   return (
-    <div className='flex flex-col space-y-[7px]'>
+    <div className="flex flex-col space-y-[7px]">
       <Field
         placeholder="Почта"
         error={errors.email}

@@ -1,0 +1,12 @@
+.selfPageButtonsWrapper {
+  @apply w-fit h-fit;
+  > .changeChannelButton {
+    @apply flex space-x-1 px-2 bg-Button rounded-[5px] py-1 cursor-pointer;
+    > .icon {
+      @apply text-White size-5 my-auto;
+    }
+    > .text {
+      @apply text-White my-auto font-medium text-[14px];
+    }
+  }
+}

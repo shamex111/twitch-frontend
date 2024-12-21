@@ -1,0 +1,15 @@
+.userPageAvatarWrapper{
+    @apply flex space-x-[20px] ;
+    > .avatar{
+        @apply w-[60px] h-[60px] rounded-full my-auto;
+    }
+    > .info{
+        @apply flex flex-col my-auto;
+        > .name{
+            @apply text-White text-[23px] font-semibold ;
+        }
+        > .countFollowers {
+            @apply text-Gray text-[16px] font-medium;
+        }
+    }
+}

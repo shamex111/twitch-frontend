@@ -1,0 +1,29 @@
+.userPageInfoWrapper {
+  @apply bg-Modal rounded-[5px] w-[325px] h-[260px] py-[30px] px-[20px] ;
+
+  > .online {
+    @apply w-[100px] h-[30px] rounded-[5px] bg-Red flex space-x-[5px] font-medium;
+
+    > .dot {
+      @apply w-[8px] h-[8px] bg-White rounded-full my-auto ml-[8px];
+    }
+
+    > .text {
+      @apply text-White text-[12px] my-auto;
+    }
+  }
+
+  > .offline {
+    @apply w-[100px] h-[30px] rounded-[5px] bg-Gray flex space-x-[5px];
+    > .text {
+      @apply text-White text-[12px] w-fit h-fit m-auto font-medium;
+    }
+  }
+
+  > .userInfo {
+    @apply text-White text-[25px] font-medium mt-[17px];
+  }
+  > .description {
+    @apply text-Gray text-[15px] mt-[14px];
+  }
+}

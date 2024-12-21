@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import { NO_INDEX_PAGE } from '@/shared/constants/seo.constants';
-import AuthLogin from '@/features/auth/ui/auth-login/authLogin';
+import AuthLogin from '@/features/auth/auth-page/ui/auth-login/authLogin';
 
 
 export const metadata: Metadata = {

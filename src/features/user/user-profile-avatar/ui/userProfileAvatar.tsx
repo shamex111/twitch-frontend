@@ -7,8 +7,8 @@ import { useSelector } from 'react-redux';
 import { SELECTEL_URL } from '@/shared/constants';
 
 import { userSelector } from '@/entities/user/store';
+import UserMenu from '../../user-menu/ui/userMenu';
 
-import UserMenu from '@/features/user-menu/ui/userMenu';
 
 const UserProfileAvatar: FC = () => {
   const { userData } = useSelector(userSelector);

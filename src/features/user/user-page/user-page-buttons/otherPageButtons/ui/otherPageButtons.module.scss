@@ -1,0 +1,16 @@
+.otherPageButtonsWrapper {
+  @apply flex space-x-[10px];
+  > .shortButton {
+    @apply bg-Button rounded-[5px] flex  space-x-1 py-[6px] px-2 cursor-pointer;
+  }
+  > .button {
+    @apply bg-Button rounded-[5px] flex  space-x-1 py-[6px] px-2 cursor-pointer;
+    > .text {
+      @apply text-White font-medium text-[14px];
+    }
+  }
+
+  .icon {
+    @apply text-White my-auto size-5;
+  }
+}

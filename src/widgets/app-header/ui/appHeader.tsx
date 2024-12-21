@@ -7,13 +7,12 @@ import { Skeleton } from '@/shared/ui/skeleton';
 
 import { userSelector } from '@/entities/user/store';
 
-import AuthButton from '@/features/auth-buttons/ui/authButton';
-import NotificationAction from '@/features/notification-action/ui/notificationAction';
-import Search from '@/features/search/ui/search';
-import UserProfileAvatar from '@/features/user-profile-avatar/ui/userProfileAvatar';
-
 import styles from './appHeader.module.scss';
 import Logo from './logo/logo';
+import NotificationAction from '@/features/header/notification-action/ui/notificationAction';
+import UserProfileAvatar from '@/features/user/user-profile-avatar/ui/userProfileAvatar';
+import AuthButton from '@/features/auth/auth-buttons/ui/authButton';
+import Search from '@/features/header/search/ui/search';
 
 const AppHeader: FC = () => {
   const { isLoading, isAuthorized } = useSelector(userSelector);

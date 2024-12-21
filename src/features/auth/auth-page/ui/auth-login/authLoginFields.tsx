@@ -1,10 +1,10 @@
 import { FC } from 'react';
 import { FieldError, UseFormGetValues, UseFormRegister } from 'react-hook-form';
 
-import { validEmail } from '@/shared/utils/valid-email';
+import Field from '@/shared/ui/field/field';
+import { validEmail } from '@/shared/utils/valid-email.util';
 
 import { ILoginForm } from '@/entities/auth';
-import Field from '@/shared/ui/field/field';
 
 interface IAuthLoginFields {
   register: UseFormRegister<ILoginForm>;

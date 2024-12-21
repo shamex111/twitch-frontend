@@ -57,6 +57,7 @@ export default {
         Panel: "#1F1F23",
         Red: "#F11010",
         Border: "#3B3B3B",
+        Button: "#29292e",
         //
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
