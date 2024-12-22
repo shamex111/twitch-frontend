@@ -1,0 +1,23 @@
+.settingsWrapper {
+  @apply flex flex-col  bg-Main shadow-lg pt-[50px] pl-[60px];
+
+  > .heading {
+    @apply text-2xl font-bold text-White mb-4;
+  }
+
+  > .tabs {
+    @apply flex space-x-10 mb-6;
+
+    > .tab {
+      @apply py-2 text-[14px] font-medium text-White cursor-pointer transition-colors;
+
+      &.activeTab {
+        @apply text-Accent  border-b-[2px] border-b-Accent;
+      }
+    }
+  }
+
+  > .content {
+    @apply w-full flex flex-col;
+  }
+}

@@ -1,0 +1,40 @@
+.settingsSafetyWrapper {
+  @apply flex flex-col space-y-[10px];
+  > .email {
+    @apply flex space-y-2 flex-col w-[800px] bg-Button border-Border border rounded-sm p-3;
+  }
+
+  > .twoFactor {
+    @apply flex justify-between w-[800px] bg-Button border-Border border rounded-sm p-3;
+    > .label {
+      @apply w-[40%];
+    }
+  }
+
+  > .passwordRecovery {
+    @apply flex justify-between w-[800px] bg-Button border-Border border rounded-sm p-1;
+    > .label {
+      @apply text-Accent text-[15px] cursor-pointer;
+    }
+  }
+
+  .input {
+    @apply w-[70%] text-Gray;
+  }
+
+  .fields {
+    @apply flex space-x-5;
+  }
+  .label {
+    @apply w-[30%] text-White my-auto;
+  }
+  .button {
+    transition: background-color 0.3s ease;
+  }
+
+  .loading {
+    background-color: #ccc;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

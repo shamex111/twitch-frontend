@@ -1,0 +1,35 @@
+.settingsProfileWrapper {
+  @apply flex flex-col space-y-[10px];
+  > .avatar {
+    @apply flex space-y-2 flex-col w-[800px] bg-Button border-Border border rounded-sm p-3;
+  }
+  > .banner {
+    @apply flex space-y-2 flex-col w-[800px] bg-Button border-Border border rounded-sm p-3;
+  }
+  > .name {
+    @apply flex space-y-2 flex-col w-[800px] bg-Button border-Border border rounded-sm p-3;
+  }
+  > .description {
+    @apply flex space-y-2 flex-col w-[800px] bg-Button border-Border border rounded-sm p-3;
+  }
+
+  .input {
+    @apply w-[70%] text-Gray;
+  }
+
+  .fields {
+    @apply flex space-x-5;
+  }
+  .label {
+    @apply w-[30%] text-White my-auto;
+  }
+  .button {
+    transition: background-color 0.3s ease;
+  }
+
+  .loading {
+    background-color: #ccc;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

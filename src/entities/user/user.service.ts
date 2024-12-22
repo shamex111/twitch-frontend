@@ -11,11 +11,12 @@ class UserService {
   public async update(data: IUpdateUser) {
     return axiosAPI.patch<IProfile>(SERVER_ROUTES.usersUpdate(), data);
   }
+  
   public async updateAvatar(file: File) {
     const formData = new FormData();
     formData.append('file', file);
 
-    return axiosAPI.patch(SERVER_ROUTES.usersUpdateAvatar(), formData, {
+    return axiosAPI.patch<IProfile>(SERVER_ROUTES.usersUpdateAvatar(), formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }
@@ -25,7 +26,7 @@ class UserService {
     const formData = new FormData();
     formData.append('file', file);
 
-    return axiosAPI.patch(SERVER_ROUTES.usersUpdateBanner(), formData, {
+    return axiosAPI.patch<IProfile>(SERVER_ROUTES.usersUpdateBanner(), formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

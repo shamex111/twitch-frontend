@@ -3,7 +3,7 @@ import { SERVER_ROUTES } from '@/shared/routes';
 
 import { IChangeEmail, ISendEmailChange } from './email-change.types';
 
-class EmailChange {
+class EmailChangeService {
   public async sendEmailChange(data: ISendEmailChange) {
     return axiosAPI.post<true>(SERVER_ROUTES.sendEmailChange(), data);
   }
@@ -12,4 +12,4 @@ class EmailChange {
   }
 }
 
-export const emailChange = new EmailChange();
+export const emailChangeService = new EmailChangeService();

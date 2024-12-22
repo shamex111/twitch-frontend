@@ -2,9 +2,14 @@
 
 import { logoutMutation } from '../api';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FC } from 'react';
+import { useSelector } from 'react-redux';
 
 import { SELECTEL_URL } from '@/shared/constants';
+import { APP_ROUTES } from '@/shared/routes';
+
+import { userSelector } from '@/entities/user/store';
 
 import styles from './userMenu.module.scss';
 
@@ -15,6 +20,7 @@ interface IUserMenu {
 
 const UserMenu: FC<IUserMenu> = ({ name, avatar }) => {
   const { mutate: logoutMutate } = logoutMutation();
+  const { userData, isLoading, isAuthorized } = useSelector(userSelector);
 
   return (
     <div className={styles.userMenuWrapper}>
@@ -31,15 +37,28 @@ const UserMenu: FC<IUserMenu> = ({ name, avatar }) => {
       <div className={styles.line}></div>
       <ul className={styles.listLinks}>
         <li className={styles.itemListLinks}>
-          <div className={styles.itemListLinkName}>Канал</div>
+          <Link
+            className={styles.itemListLinkName}
+            href={APP_ROUTES.user(userData?.name as string)}
+          >
+            Канал
+          </Link>
         </li>
         <li className={styles.itemListLinks}>
-          <div className={styles.itemListLinkName}>
+          <Link
+            className={styles.itemListLinkName}
+            href={APP_ROUTES.dashboard()}
+          >
             Панель управления автора
-          </div>
+          </Link>
         </li>
         <li className={styles.itemListLinks}>
-          <div className={styles.itemListLinkName}>Настройки</div>
+          <Link
+            className={styles.itemListLinkName}
+            href={APP_ROUTES.settings()}
+          >
+            Настройки
+          </Link>
         </li>
         <li className={styles.itemListLinks}>
           <div className={styles.itemListLinkName}>Кошелек</div>

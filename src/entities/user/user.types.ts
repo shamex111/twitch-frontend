@@ -1,4 +1,5 @@
-import { IDescriptionPart } from "../channel";
+import { IDescriptionPart } from '../channel';
+import { ISession } from '../session';
 
 export interface IProfile {
   id: string;
@@ -16,23 +17,24 @@ export interface IProfile {
   balance: number;
   createdAt: string;
   updatedAt: string;
-  descriptionParts:IDescriptionPart[]
+  descriptionParts: IDescriptionPart[];
 }
-
-
 
 export interface IUser
   extends Omit<
     IProfile,
-    'isVerified' | 'isTwoFactorEnabled' | 'method' | 'balance' | 'updatedAt'
+    | 'isVerified'
+    | 'isTwoFactorEnabled'
+    | 'method'
+    | 'balance'
+    | 'updatedAt'
   > {}
 
 export interface IUpdateUser {
   name?: string;
   description?: string;
-  banner?: string;
   color?: string;
-  isTwoFactorEnabled: boolean;
+  isTwoFactorEnabled?: boolean;
   code?: string;
 }
 

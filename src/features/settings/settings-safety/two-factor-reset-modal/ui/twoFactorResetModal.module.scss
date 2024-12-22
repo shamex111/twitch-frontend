@@ -1,0 +1,30 @@
+.twoFactorResetModalWrapper {
+  @apply px-5 py-3 bg-Modal rounded-[10px] flex flex-col;
+
+  > .header {
+    @apply text-2xl font-medium mx-auto text-White;
+  }
+
+  > .close {
+    @apply text-White size-6 ml-auto mr-2 cursor-pointer;
+  }
+  > .code {
+    @apply flex space-x-2 mx-auto w-fit mt-[20px];
+    > .codeItem {
+      @apply rounded-[5px] border-[2px] border-Border h-[35px] w-[35px] bg-transparent outline-none flex justify-center text-[20px] px-[10px] text-Gray font-medium;
+    }
+  }
+  > .info {
+    @apply text-Gray mt-[15px] mx-auto;
+  }
+
+  > .send {
+    @apply text-Accent cursor-pointer ml-auto mt-[20px] ;
+  }
+  > .submit {
+    @apply cursor-pointer hover:bg-Red duration-300 active:bg-opacity-60  ;
+  }
+  .warning{
+    @apply text-Red font-medium mx-auto h-fit my-[10px];
+  }
+}
