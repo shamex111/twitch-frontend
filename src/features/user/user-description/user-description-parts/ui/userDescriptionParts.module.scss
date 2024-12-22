@@ -1,0 +1,13 @@
+.userDescriptionPartsWrapper {
+  @apply flex space-x-3 flex-wrap;
+  > .part {
+    @apply flex flex-col;
+
+     .partImage {
+      @apply min-h-[200px] min-w-[200px] max-h-[700px] max-w-[450px];
+    }
+    > .partDescription {
+      @apply text-White;
+    }
+  }
+}

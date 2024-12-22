@@ -1,3 +1,5 @@
+import { IDescriptionPart } from "../channel";
+
 export interface IProfile {
   id: string;
   email: string;
@@ -14,6 +16,7 @@ export interface IProfile {
   balance: number;
   createdAt: string;
   updatedAt: string;
+  descriptionParts:IDescriptionPart[]
 }
 
 
