@@ -44,6 +44,7 @@ const PasswordRecoveryModal: FC<IPasswordRecoveryModal> = ({
       <Input
         type="text"
         placeholder="Новый пароль"
+        name="newPassword"
         onChange={e => setNewPassword(e.target.value)}
       />
 

@@ -18,6 +18,26 @@
     }
   }
 
+  > .sessions {
+    @apply flex flex-col space-y-[10px] ;
+    > .heading {
+      @apply text-White font-medium text-[20px] my-[5px];
+    }
+    > .session {
+      @apply text-White flex justify-between bg-Button w-[800px] border-Border border rounded-sm p-1;
+
+      > div {
+        @apply flex flex-col space-y-[10px];
+        > div {
+          @apply flex space-x-[10px];
+        }
+      }
+      > .delete {
+        @apply my-auto mr-[20px] size-7 cursor-pointer text-Red;
+      }
+    }
+  }
+
   .input {
     @apply w-[70%] text-Gray;
   }
@@ -36,5 +56,8 @@
     background-color: #ccc;
     cursor: not-allowed;
     pointer-events: none;
+  }
+  > .heading{
+    @apply text-Gray font-semibold text-[30px] ;
   }
 }
