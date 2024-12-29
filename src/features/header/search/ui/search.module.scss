@@ -12,4 +12,8 @@
   > .searchInput {
     @apply bg-transparent outline-none text-Gray ml-[13px] text-[18px] font-normal w-full;
   }
+   > .clear{
+
+    @apply ml-auto my-auto mr-5 text-Gray size-7 cursor-pointer ;
+   }
 }

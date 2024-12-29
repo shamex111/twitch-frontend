@@ -1,4 +1,7 @@
+import Link from 'next/link';
 import { FC, Fragment, useState } from 'react';
+
+import { APP_ROUTES } from '@/shared/routes';
 
 import styles from './SideChannelsList.module.scss';
 import SideChannelsListItem, {
@@ -24,13 +27,16 @@ const SideChannelsList: FC<ISideChannelList> = ({ data, defaultCount = 4 }) => {
     <div className={styles.channelListWrapper}>
       {data.slice(0, countElements).map(i => (
         <Fragment key={i.name + i.avatar}>
-          <SideChannelsListItem
-            name={i.name}
-            avatar={i.avatar}
-            category={i.category}
-            isOnline={i.isOnline}
-            online={i?.online}
-          />
+          <Link href={APP_ROUTES.stream(i.username)}>
+            <SideChannelsListItem
+              name={i.name}
+              avatar={i.avatar}
+              category={i.category}
+              isOnline={i.isOnline}
+              online={i?.online}
+              username={i?.username}
+            />
+          </Link>
         </Fragment>
       ))}
       <div className={styles.actionButtons}>
@@ -39,9 +45,11 @@ const SideChannelsList: FC<ISideChannelList> = ({ data, defaultCount = 4 }) => {
             Скрыть
           </div>
         )}
-        <div onClick={handleIncrease} className={styles.more}>
-          Показать еще...
-        </div>
+        {countElements <= data.length && (
+          <div onClick={handleIncrease} className={styles.more}>
+            Показать еще...
+          </div>
+        )}
       </div>
     </div>
   );

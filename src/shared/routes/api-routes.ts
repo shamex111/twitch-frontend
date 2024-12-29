@@ -40,6 +40,17 @@ export const SERVER_ROUTES = {
   logout: () => SERVER_ROUTES.sessionsRoot('logout'),
 
   channelRoot: (url = '') => SERVER_ROUTES.root(`/channels/${url}`),
+  channelUserFollower: (streamerId: string, userId: string) =>
+    SERVER_ROUTES.channelRoot(`user-follower/${streamerId}?userId=${userId}`),
+  channelUserFollowers: (
+    streamerId: string,
+    count: number,
+    startWith: number
+  ) =>
+    SERVER_ROUTES.channelRoot(
+      `user-followers/${streamerId}?count=${count}&startWith=${startWith}`
+    ),
+  
   channelFollow: () => SERVER_ROUTES.channelRoot('follow'),
   channelUnfollow: () => SERVER_ROUTES.channelRoot('unfollow'),
   channelCreateDescriptionPart: () =>
@@ -50,6 +61,12 @@ export const SERVER_ROUTES = {
   deleteEmote: () => SERVER_ROUTES.channelRoot('delete-emote'),
 
   subscriptionsRoot: (url = '') => SERVER_ROUTES.root(`/subscriptions/${url}`),
+  subscriptionUserSubscriber: (streamerId: string, userId: string) =>
+    SERVER_ROUTES.subscriptionsRoot(
+      `user-subscriber/${streamerId}?userId=${userId}`
+    ),
+  subscriptionSubscription: (streamerId: string) =>
+    SERVER_ROUTES.subscriptionsRoot(`${streamerId}`),
   subscriptionCreate: () => SERVER_ROUTES.subscriptionsRoot('create'),
   subscriptionChange: () => SERVER_ROUTES.subscriptionsRoot('change'),
   subscriptionChangeIcon: () => SERVER_ROUTES.subscriptionsRoot('change-icon'),

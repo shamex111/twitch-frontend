@@ -1,7 +1,8 @@
-import { IProfile } from '../user.types';
+
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { IUpdateUserState, IUserState } from './types';
+import { IUpdateUserState, IUserData, IUserState } from './types';
+import { IProfile } from '../user.types';
 
 const initialState: IUserState = {
   userData: null,
@@ -23,11 +24,29 @@ const userSlice = createSlice({
     setUser: (
       state,
       payload: PayloadAction<{
-        userData: IProfile | null;
+        userData: IProfile | IUserData | null; 
         isAuthorized: boolean;
       }>
     ) => {
-      state.userData = payload.payload.userData;
+      if (payload.payload.userData === null) {
+        state.userData = null;
+      } else {
+        state.userData = {
+          id: payload.payload.userData.id,
+          email: payload.payload.userData.email,
+          name: payload.payload.userData.name,
+          avatar: payload.payload.userData.avatar,
+          description: payload.payload.userData.description,
+          banner: payload.payload.userData.banner,
+          isVerified: payload.payload.userData.isVerified,
+          isTwoFactorEnabled: payload.payload.userData.isTwoFactorEnabled,
+          color: payload.payload.userData.color,
+          countFollowers: payload.payload.userData.countFollowers,
+          streamId: payload.payload.userData.streamId,
+          balance: payload.payload.userData.balance,
+          createdAt: payload.payload.userData.createdAt
+        };
+      }
       state.isLoading = false;
       state.isAuthorized = true;
     },

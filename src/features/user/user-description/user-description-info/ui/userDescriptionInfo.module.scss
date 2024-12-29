@@ -1,3 +1,15 @@
 .userDescriptionInfoWrapper {
-  @apply bg-Modal h-[100px] w-[700px] rounded-[5px]  mx-auto;
+  @apply bg-Button  w-[500px] rounded-[5px] mx-auto p-3 ;
+
+    > .heading{
+      @apply text-[20px] text-White font-medium mb-[10px];
+    }
+
+  > .description{
+    @apply text-White text-[16px] mb-[5px] ;
+  }
+
+  > .countFollowers{
+    @apply text-Gray font-semibold ;
+  }
 }

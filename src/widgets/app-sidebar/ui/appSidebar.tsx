@@ -1,53 +1,61 @@
 'use client';
 
+import Link from 'next/link';
 import { FC } from 'react';
 import { CiStreamOn } from 'react-icons/ci';
 import { useSelector } from 'react-redux';
 
+import { APP_ROUTES } from '@/shared/routes';
 import { Button } from '@/shared/ui/button';
 
 import { userSelector } from '@/entities/user/store';
 
-import styles from './appSidebar.module.scss';
-import SideChannelsList from '@/features/sidebar/side-channels-list/ui/SideChannelsList';
 import { ISideChannelsListItem } from '@/features/sidebar/side-channels-list/ui';
+import SideChannelsList from '@/features/sidebar/side-channels-list/ui/SideChannelsList';
+
+import styles from './appSidebar.module.scss';
 
 const AppSidebar: FC = () => {
   const mockSideChannelsList: ISideChannelsListItem[] = [
     {
-      avatar: '/users/f4b2c56-dd37-4bd9-a7a1-ff861e699a9b.webp',
+      avatar: '/users/7e21517a-bab1-4ab8-a33a-6eef6421780f.webp',
       name: 'Tech Talk',
       category: 'Technology',
       isOnline: true,
-      online: 1200
+      online: 1200,
+      username: 'Андрей'
     },
     {
-      avatar: '/users/f4b2c56-dd37-4bd9-a7a1-ff861e699a9b.webp',
+      avatar: '/users/7e21517a-bab1-4ab8-a33a-6eef6421780f.webp',
       name: 'Gaming Hub',
       category: 'Gaming',
       isOnline: false,
-      online: 0
+      online: 0,
+      username: 'Андрей'
     },
     {
-      avatar: '/users/f4b2c56-dd37-4bd9-a7a1-ff861e699a9b.webp',
+      avatar: '/users/7e21517a-bab1-4ab8-a33a-6eef6421780f.webp',
       name: 'Fitness World',
       category: 'Health & Fitness',
       isOnline: true,
-      online: 250
+      online: 250,
+      username: 'Андрей'
     },
     {
-      avatar: '/users/f4b2c56-dd37-4bd9-a7a1-ff861e699a9b.webp',
+      avatar: '/users/7e21517a-bab1-4ab8-a33a-6eef6421780f.webp',
       name: 'Music Lovers',
       category: 'Music',
       isOnline: false,
-      online: undefined
+      online: undefined,
+      username: 'Андрей'
     },
     {
-      avatar: '/users/f4b2c56-dd37-4bd9-a7a1-ff861e699a9b.webp',
+      avatar: '/users/7e21517a-bab1-4ab8-a33a-6eef6421780f.webp',
       name: 'Daily News',
       category: 'News',
       isOnline: true,
-      online: 530
+      online: 530,
+      username: 'Андрей'
     }
   ];
   const { userData, isAuthorized, isLoading } = useSelector(userSelector);
@@ -66,10 +74,12 @@ const AppSidebar: FC = () => {
           <SideChannelsList data={mockSideChannelsList} />
         </div>
       </div>
-      <Button className={styles.streamButton}>
-        <div className={styles.streamText}>Начать трансляцию</div>
-        <CiStreamOn className={styles.streamIcon} />
-      </Button>
+      <Link href={APP_ROUTES.dashboard()}>
+        <div className={styles.streamButton}>
+          <div className={styles.streamText}>Начать трансляцию</div>
+          <CiStreamOn className={styles.streamIcon} />
+        </div>
+      </Link>
     </div>
   );
 };

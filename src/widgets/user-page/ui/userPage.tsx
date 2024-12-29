@@ -11,12 +11,12 @@ import { userSelector } from '@/entities/user/store';
 import OtherPageButtons from '@/features/user/user-buttons/otherPageButtons/ui/otherPageButtons';
 import SelfPageButtons from '@/features/user/user-buttons/selfPageButtons/ui/selfPageButtons';
 import UserDescriptionInfo from '@/features/user/user-description/user-description-info/ui/userDescriptionInfo';
+import UserDescriptionParts from '@/features/user/user-description/user-description-parts/ui/userDescriptionParts';
 import UserPageAvatar from '@/features/user/user-page/user-page-avatar/ui/userPageAvatar';
 import UserPageInfo from '@/features/user/user-page/user-page-info/ui/userPageInfo';
 import UserPageStream from '@/features/user/user-page/user-page-stream/ui/userPageStream';
 
 import styles from './userPage.module.scss';
-import UserDescriptionParts from '@/features/user/user-description/user-description-parts/ui/userDescriptionParts';
 
 interface IUserPage {
   name: string;
@@ -83,17 +83,26 @@ const UserPage: FC<IUserPage> = ({ name }) => {
             avatar={data.avatar}
           />
           <div className={styles.actionButtons}>
-            {isUserPage ? <SelfPageButtons /> : <OtherPageButtons />}
+            {isUserPage ? (
+              <SelfPageButtons />
+            ) : (
+              <OtherPageButtons
+                streamerId={data.id}
+                userId={selfUserData?.id || ''}
+              />
+            )}
           </div>
         </div>
         <div>
           <div>
-            <div>Информация: {data.name}</div>
-          <UserDescriptionInfo
-            description={data.description}
-            countFollowers={data.countFollowers}
-          />
-          <UserDescriptionParts data={data.descriptionParts}/>
+            <UserDescriptionInfo
+              description={data.description}
+              countFollowers={data.countFollowers}
+              name={data.name}
+            />
+            <div className="mt-[100px]">
+              <UserDescriptionParts data={data.descriptionParts} />
+            </div>
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@ export interface ISideChannelsListItem {
   category: string;
   isOnline: boolean;
   online?: number;
+  username:string
 }
 
 const SideChannelsListItem: FC<ISideChannelsListItem> = ({

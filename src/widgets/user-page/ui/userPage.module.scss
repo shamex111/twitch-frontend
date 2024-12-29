@@ -1,16 +1,18 @@
 .userPageWrapper {
-  @apply w-full h-full flex flex-col space-y-[160px];
+  @apply w-full h-full flex flex-col space-y-[160px] overflow-y-auto rounded-tl-xl;
+  max-height: calc(100vh - 94px);
   > .header {
     @apply flex space-x-[16px] mx-auto w-fit top-[80px] relative;
   }
 
   > .content {
-    @apply bg-Main h-full;
+    @apply bg-Main flex-grow; 
+    min-height: calc(100vh - 94px); 
     width: calc(100% - 70px);
-    > .topContent{
-      @apply flex px-[50px] justify-between mt-[40px] ;
+    > .topContent {
+      @apply flex px-[50px] justify-between mt-[40px];
       > .actionButtons {
-        @apply my-auto ;
+        @apply my-auto;
       }
     }
   }

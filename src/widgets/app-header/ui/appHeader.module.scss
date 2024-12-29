@@ -1,5 +1,5 @@
 .header {
-  @apply bg-Modal w-[100vw] h-[93px] flex justify-between px-7 ;
+  @apply bg-Modal w-full h-[93px] fixed top-0 left-0 flex justify-between px-7 z-50;
   > .userActions {
     @apply flex space-x-[40px] my-auto;
   }

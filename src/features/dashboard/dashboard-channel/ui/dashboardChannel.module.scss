@@ -1,0 +1,88 @@
+.dashboardChannelWrapper {
+  @apply flex flex-col w-full;
+  > .channelCard {
+    @apply bg-transparent border-Border flex space-x-[30px];
+
+    .avatar {
+      @apply h-[70px] w-[70px] rounded-full my-auto;
+    }
+    .label {
+      @apply text-White font-semibold my-auto text-[24px];
+    }
+  }
+  .followersWrapper {
+    @apply flex flex-col space-y-4 my-5 w-full;
+    > .followersHeader {
+      @apply flex justify-between;
+
+      > .headerButton {
+        @apply text-2xl cursor-pointer text-White my-auto;
+      }
+    }
+    > .noneFollowers {
+      @apply text-Gray text-[16px];
+    }
+    > .followers {
+      @apply flex flex-col w-full;
+      > .follower {
+        @apply flex space-x-3 border-b border-Border  p-2 w-full;
+        > .avatar {
+          @apply rounded-full w-[50px] h-[50px] my-auto;
+        }
+        > .followerInfo {
+          @apply flex flex-col;
+          > .name {
+            @apply text-White font-medium;
+          }
+          > .followAt {
+            @apply text-Gray font-semibold text-[14px];
+          }
+          > .actions {
+            @apply ml-auto mr-2;
+          }
+        }
+      }
+    }
+  }
+
+  .descriptionPartsWrapper {
+    @apply flex flex-col;
+    .noneDescriptionParts {
+      @apply text-Gray text-[16px];
+    }
+
+    .createButton {
+      @apply my-2 w-full;
+    }
+  }
+
+  .viewMore {
+    @apply text-Accent font-medium text-[17px] cursor-pointer ml-auto my-2;
+  }
+}
+.createDescriptionPartModalWrapper {
+  @apply px-5 py-3 bg-Modal w-[500px] rounded-[10px] flex flex-col;
+  > .header {
+    @apply text-2xl font-medium mx-auto text-White;
+  }
+
+  > .close {
+    @apply text-White size-6 ml-auto mr-2 cursor-pointer;
+  }
+
+  .content {
+    @apply flex flex-col space-y-3 my-3;
+    .nameField {
+      @apply text-White font-medium text-[15px];
+    }
+    .description {
+      @apply text-Gray text-[14px];
+    }
+  }
+  .button {
+    @apply w-full my-2;
+  }
+}
+.heading {
+  @apply text-2xl font-medium text-White;
+}

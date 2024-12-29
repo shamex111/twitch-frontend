@@ -11,7 +11,7 @@ export default function Layout({
     <>
       <UserGetData />
       <AppHeader />
-      {children}
+      <div className="mt-[93px]">{children}</div>
     </>
   );
 }

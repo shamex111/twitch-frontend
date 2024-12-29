@@ -1,11 +1,11 @@
 .channelListWrapper {
   @apply flex flex-col space-y-[18px] pr-[20px];
-  > .channelListItemWrapper {
+  .channelListItemWrapper {
     @apply flex;
-    > .avatar {
+     .avatar {
       @apply w-[45px] h-[45px] rounded-full my-auto;
     }
-    > .streamerInfo {
+    .streamerInfo {
       @apply flex flex-col my-auto h-fit ml-[20px];
       > .streamerName {
         @apply text-[14px] h-fit text-White font-semibold;
@@ -14,7 +14,7 @@
         @apply text-[14px] h-fit font-medium text-Gray;
       }
     }
-    > .streamInfo {
+     .streamInfo {
       @apply flex space-x-[13px] my-auto ml-auto;
       > .dot {
         @apply rounded-full bg-Red h-[9px] w-[9px] my-auto;

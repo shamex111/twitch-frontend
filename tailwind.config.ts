@@ -48,7 +48,8 @@ export default {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        //мои переменные
+
+        // //dark theme
         White: "#fff",
         Accent: "#9147FF",
         Main: "#0E0E10",
@@ -58,7 +59,18 @@ export default {
         Red: "#F11010",
         Border: "#3B3B3B",
         Button: "#29292e",
-        //
+
+        // //white theme
+        // White: "#0E0E10", // Темный текст для светлого фона
+        // Accent: "#9147FF", // Оставляем акцентный цвет неизменным
+        // Main: "#FFFFFF", // Основной цвет для фона
+        // Modal: "#F5F5F5", // Цвет для модальных окон, чуть темнее основного
+        // Gray: "#4F4F4F", // Более светлый серый для текста
+        // Panel: "#EAEAEA", // Цвет для панелей
+        // Red: "#D72626", // Насыщенный красный, чтобы быть ярким на светлом фоне
+        // Border: "#D1D1D1", // Светлый цвет для границ
+        // Button: "#F0F0F3", // Цвет для кнопок, чтобы они выделялись на светлом фоне
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -69,34 +81,38 @@ export default {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        sidebar: {
+          DEFAULT: "",
+          foreground: "#9B9B9B",
+        },
       },
       keyframes: {
         fade: {
-            from: { opacity: '0' },
-            to: { opacity: '1' }
+          from: {
+            opacity: "0",
+          },
+          to: {
+            opacity: "1",
+          },
         },
         scaleIn: {
-          '0%':{
-            opacity:'0',
-            transform: 'scale(0.9)'
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.9)",
           },
-          '50%':{
-            opacity:'0.3'
+          "50%": {
+            opacity: "0.3",
           },
-          '100%':{
-            opacity:'1',
-            transform: 'scale(1)'
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)",
           },
-        }
-    },
-    // fontFamily: {
-    //   sans:['var(--font-geist-sans)'],
-    //   mono:['var(--font-geist-mono)'],
-    // },
-    animation:{
-      fade:'fade .5s ease-in-out',
-      scaleIn: 'scaleIn .35s ease-in-out'
-    }
+        },
+      },
+      animation: {
+        fade: "fade .5s ease-in-out",
+        scaleIn: "scaleIn .35s ease-in-out",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

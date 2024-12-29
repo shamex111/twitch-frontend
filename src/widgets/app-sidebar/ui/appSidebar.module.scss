@@ -1,5 +1,5 @@
 .sidebar {
-  @apply w-[328px] bg-Modal border-Border border-r pt-[25px] flex flex-col;
+  @apply w-[328px] bg-Modal  pt-[25px] flex flex-col;
   height: calc(100vh - 94px);
   > .channels {
     @apply flex flex-col space-y-[20px] overflow-auto;
@@ -17,13 +17,13 @@
       }
     }
   }
-  > .streamButton {
-    @apply w-[180px] h-[40px] mx-auto;
+  .streamButton {
+    @apply w-[200px] h-[40px] mx-auto flex justify-between;
 
-    > .streamIcon{
-      @apply size-6;
+    .streamIcon {
+      @apply size-6 text-White my-auto h-fit;
     }
-    > .streamText{
+    .streamText {
       @apply text-White font-medium text-[13px];
     }
 

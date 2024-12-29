@@ -6,16 +6,28 @@ import {
   ICreateSubscription,
   IEditSubscription,
   IPaymentStatus,
-  ISubscription
+  ISubscriber,
+  IUserSubscription
 } from './subscription.types';
 
 class SubscriptionService {
+  public async userSubscriber(streamerId: string, userId: string) {
+    return axiosAPI.get<ISubscriber | null>(
+      SERVER_ROUTES.subscriptionUserSubscriber(streamerId, userId)
+    );
+  }
+  public async getSubscription(streamerId: string) {
+    return axiosAPI.get<IUserSubscription | null>(
+      SERVER_ROUTES.subscriptionSubscription(streamerId)
+    );
+  }
+
   public async create(data: ICreateSubscription, file: File) {
     const formData = new FormData();
     formData.append('file', file);
     if (data?.price !== undefined) formData.append('price', data.price);
 
-    return axiosAPI.post<ISubscription>(
+    return axiosAPI.post<IUserSubscription>(
       SERVER_ROUTES.subscriptionCreate(),
       formData,
       {
@@ -27,7 +39,7 @@ class SubscriptionService {
   }
 
   public async edit(data: IEditSubscription) {
-    return axiosAPI.patch<ISubscription>(
+    return axiosAPI.patch<IUserSubscription>(
       SERVER_ROUTES.subscriptionChange(),
       data
     );
@@ -37,7 +49,7 @@ class SubscriptionService {
     const formData = new FormData();
     formData.append('file', file);
 
-    return axiosAPI.patch<ISubscription>(
+    return axiosAPI.patch<IUserSubscription>(
       SERVER_ROUTES.subscriptionChangeIcon(),
       formData,
       {

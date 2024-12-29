@@ -13,4 +13,51 @@
   .icon {
     @apply text-White my-auto size-5;
   }
+
+  .button {
+    > .text {
+      @apply duration-150;
+    }
+
+    .subscribeIcon {
+      @apply text-Accent my-auto size-5 duration-150;
+    }
+    .unsubscribeIcon {
+      @apply my-auto text-White size-5 duration-150;
+    }
+    &:active {
+      > .text {
+        @apply text-opacity-30;
+      }
+
+      .unsubscribeIcon {
+        @apply text-opacity-30 text-Accent;
+      }
+    }
+  }
+
+  .unfollowIcon {
+    @apply text-White my-auto size-5 duration-150;
+    &:active {
+      @apply text-opacity-30 text-Accent;
+    }
+  }
+  .followIcon {
+    @apply text-Accent my-auto size-5 duration-150;
+    &:active {
+      @apply text-opacity-30 text-White;
+    }
+  }
+}
+
+/* subscription modal */
+.subscriptionModalWrapper {
+  @apply px-5 py-3 bg-Modal w-[500px] rounded-[10px] flex flex-col;
+  > .header {
+    @apply text-2xl font-medium mx-auto text-White;
+  }
+
+  > .close {
+    @apply text-White size-6 ml-auto mr-2 cursor-pointer;
+  }
 }

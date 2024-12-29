@@ -10,10 +10,26 @@ import {
   IDescriptionPart,
   IEmote,
   IFollow,
+  IFollower,
   IUnfollow
 } from './channel.types';
 
 class ChannelService {
+  public async userFollower(streamerId: string, userId: string) {
+    return axiosAPI.get<IFollower | null>(
+      SERVER_ROUTES.channelUserFollower(streamerId, userId)
+    );
+  }
+  public async userFollowers(
+    streamerId: string,
+    count: number,
+    startWith: number
+  ) {
+    return axiosAPI.get<IFollower[]>(
+      SERVER_ROUTES.channelUserFollowers(streamerId, count, startWith)
+    );
+  }
+
   public async follow(data: IFollow) {
     return axiosAPI.post<IFollow>(SERVER_ROUTES.channelFollow(), data);
   }

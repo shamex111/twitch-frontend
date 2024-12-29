@@ -7,11 +7,11 @@ export interface IEditSubscription {
 }
 
 export interface IBuySubscription {
-  userSubscriptionId: string;
+  userId: string;
   callbackUrl: string;
 }
 
-export interface ISubscription {
+export interface IUserSubscription {
   id: string;
   createdAt: string;
   updatedAt: string;
@@ -19,6 +19,16 @@ export interface ISubscription {
   icon: string;
   userId: string;
 }
+
+export interface ISubscription {
+  id: string;
+  subscriberId: string;
+  subscribedId: string;
+  createdAt: string;
+  updatedAt: string;
+  expiredIn: string;
+}
+
 export interface IPaymentAmount {
   value: string;
   currency: string;

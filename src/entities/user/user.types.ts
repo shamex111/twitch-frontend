@@ -1,5 +1,9 @@
-import { IDescriptionPart } from '../channel';
-import { ISession } from '../session';
+import { IDescriptionPart, IEmote, IFollower } from '../channel';
+import { IChat, IMessage } from '../chat';
+import { ICurrency, ICurrencyBalance } from '../currency';
+import { IBan, IModerator } from '../moderator';
+import { IBuyReward, IBuyerReward } from '../reward';
+import { ISubscription, IUserSubscription } from '../subscription';
 
 export interface IProfile {
   id: string;
@@ -12,22 +16,38 @@ export interface IProfile {
   isTwoFactorEnabled: boolean;
   color: string;
   countFollowers: number;
-  streamId: string;
+  descriptionParts: IDescriptionPart[];
+  following: IFollower[];
+  followers: IFollower[];
+  bans: IBan[];
+  issuedBans: IBan[];
+  userModerators: IModerator[];
+  appointedModerators: IModerator[];
+  streamerCurrency: ICurrency[];
+  currencyBalance: ICurrencyBalance[];
+  userRewards: IBuyReward[];
+  boughtRewards: IBuyerReward[];
+  subscriptions: ISubscription[];
+  subscribers: ISubscription[];
+  emotes: IEmote[];
+  message: IMessage[];
+  streamId: string | null;
+  chat: IChat[];
   method: AuthMethod;
+  userSubscription: IUserSubscription[];
   balance: number;
   createdAt: string;
   updatedAt: string;
-  descriptionParts: IDescriptionPart[];
+  // stream: IStreamStats | null;
+  // streamStats: IStreamStats [];
+  // receivedNotifications: INotification[];
+  // sentNotifications: INotification[];
 }
 
 export interface IUser
   extends Omit<
     IProfile,
-    | 'isVerified'
-    | 'isTwoFactorEnabled'
-    | 'method'
-    | 'balance'
-    | 'updatedAt'
+    'isVerified' | 'isTwoFactorEnabled' | 'balance' | 'updatedAt'
   > {}
 
 export interface IUpdateUser {

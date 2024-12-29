@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <div >
+  return <div className='overflow-y-auto'>
         <MainContent/>
   </div>;
 }

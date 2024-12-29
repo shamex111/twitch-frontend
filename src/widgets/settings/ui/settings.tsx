@@ -1,9 +1,12 @@
 'use client';
 
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { ISession } from '@/entities/session';
+import { APP_ROUTES } from '@/shared/routes';
+
 import { userSelector } from '@/entities/user/store';
 
 import SettingsProfile from '@/features/settings/settings-profile/ui/settingsProfile';
@@ -16,8 +19,13 @@ type TSettingsTabs = 'profile' | 'safety';
 const Settings: FC = () => {
   const { isLoading, isAuthorized, userData } = useSelector(userSelector);
   const [activeTab, setActiveTab] = useState<TSettingsTabs>('profile');
+  const { push } = useRouter();
   if (isLoading) {
     return <div>load</div>;
+  }
+
+  if (!isAuthorized && !isLoading) {
+    push('/')
   }
 
   return (
@@ -36,6 +44,9 @@ const Settings: FC = () => {
         >
           Безопасность
         </div>
+        <Link className={styles.tab} href={APP_ROUTES.dashboard()}>
+          Панель управления автора
+        </Link>
       </div>
       <div className={styles.content}>
         {activeTab === 'profile' && (

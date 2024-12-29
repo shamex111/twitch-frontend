@@ -1,1 +1,1 @@
-export * from './userDescriptionParts.tsx'
+export * from './userDescriptionParts';

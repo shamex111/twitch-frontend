@@ -1,3 +1,5 @@
+import { IUser } from "../user";
+
 export interface IFollow {
   streamerId: string;
 }
@@ -39,6 +41,7 @@ export interface IFollower {
   updatedAt: string;
   userId: string;
   streamerId: string;
+  user?:IUser
 }
 
 export interface IDescriptionPart {
